@@ -1,0 +1,137 @@
+﻿@model CommentsViewModel
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - HaberSitem.Web</title>
+
+
+    <link href="~/css/superfish.css" rel="stylesheet" />
+    <link href="~/css/fontello/fontello.css" rel="stylesheet" />
+    <link href="~/css/flexslider.css" rel="stylesheet" />
+    <link href="~/css/ui.css" rel="stylesheet" />
+    <link href="~/css/base.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/960.css" rel="stylesheet" />
+    <link href="~/css/devices/1000.css" rel="stylesheet" />
+    <link href="~/css/devices/767.css" rel="stylesheet" />
+    <link href="~/css/devices/479.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div class="body-wrapper">
+        <div class="controller">
+            <div class="controller2">
+                <header id="header">
+                    <div class="container">
+                        <div class="column">
+                            <div class="logo">
+                                <a href="index-2.html"><img src="img/logo.png" alt="MyPassion" /></a>
+                            </div>
+
+                            <div class="search">
+                                <form action="#" method="post">
+                                    <input type="text" value="Search." onblur="if(this.value=='') this.value='Search.';" onfocus="if(this.value=='Search.') this.value='';" class="ft" />
+                                    <input type="submit" value="" class="fs">
+                                </form>
+                            </div>
+
+                            <!-- Nav -->
+                            <nav id="nav">
+                                <ul class="sf-menu">
+                                    <li class="current"><a href="index-2.html">Home.</a></li>
+                                    
+                                    <li><a href="reviews.html">World.</a></li>
+                                    <li><a href="reviews.html">Business.</a></li>
+                                    <li><a href="reviews.html">Politics.</a></li>
+                                    <li>
+                                        <a href="reviews.html">Sports.</a>
+                                        <ul>
+                                            <li><i class="icon-right-open"></i><a href="#">Football.</a></li>
+                                            <li><i class="icon-right-open"></i><a href="#">Running.</a></li>
+                                            <li><i class="icon-right-open"></i><a href="#">Tennis.</a></li>
+                                            <li><i class="icon-right-open"></i><a href="#">Fitness.</a></li>
+                                            <li><i class="icon-right-open"></i><a href="#">Golf.</a></li>
+                                            <li><i class="icon-right-open"></i><a href="#">Motosport.</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="reviews.html">Health.</a></li>
+                                    <li><a href="reviews.html">Science.</a></li>
+                                    <li><a href="reviews.html">Music.</a></li>
+                                    <li><a href="reviews.html">Tech.</a></li>
+                                </ul>
+
+                            </nav>
+                            <!-- /Nav -->
+                        </div>
+                    </div>
+                </header>
+                </div>
+            </div>
+        </div>
+
+
+
+
+                @RenderBody()
+
+                <footer id="footer">
+                    <div class="container">
+                        <div class="column-one-fourth">
+                            <h5 class="line"><span>Tweets.</span></h5>
+                            <div id="tweets"></div>
+                        </div>
+                        <div class="column-one-fourth">
+                            <h5 class="line"><span>Haberler.</span></h5>
+                            <ul class="footnav">
+                                @foreach (var item in Model.News)
+    {
+                            <li><a href="#"><i class="icon-right-open"></i> @item.Category.Name</a></li>
+
+}
+
+
+
+                            </ul>
+                        </div>
+                        <div class="column-one-fourth">
+                            <h5 class="line"><span>Haber Galeri.</span></h5>
+                            <div class="flickrfeed">
+                                <ul id="basicuse" class="thumbs">
+                                <li class="hide">
+                                    @foreach (var item in Model.News)
+                                {
+                                    @item.Photo
+                                }</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="column-one-fourth">
+                            <h5 class="line"><span>About.</span></h5>
+                            <p>Blandit rutrum, erat et egestas ultricies, dolor tortor egestas enim, quiste rhon cus sem purus eu sapien. Lorem ipsum dolor sit amet adipcising elit. Elit norem simuls tortor lorem adipcising purus mosteu dsapien egestas.</p>
+                        </div>
+                        <p class="copyright">Copyright 2013. All Rights Reserved</p>
+                    </div>
+                </footer>
+
+
+
+                <script src="~/js/jquery.js"></script>
+                <script src="~/js/easing.min.js"></script>
+                <script src="~/js/1.8.2.min.js"></script>
+                <script src="~/js/ui.js"></script>
+                <script src="~/js/carouFredSel.js"></script>
+                <script src="~/js/superfish.js"></script>
+                <script src="~/js/customM.js"></script>
+                <script src="~/js/flexslider-min.js"></script>
+                <script src="~/js/tweetable.js"></script>
+                <script src="~/js/timeago.js"></script>
+                <script src="~/js/jflickrfeed.min.js"></script>
+                <script src="~/js/mobilemenu.js"></script>
+                <script src="~/js/mypassion.js"></script>
+
+
+                @RenderSection("Scripts", required: false)
+</body>
+</html>
